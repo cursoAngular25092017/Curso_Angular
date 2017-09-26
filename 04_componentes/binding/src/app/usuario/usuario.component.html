@@ -1,0 +1,26 @@
+<p>
+  <label for="in-nombre">Dinos tu nombre</label>
+  <input type="text" id="in-nombre" [(ngModel)]="oUsuario.nombre">
+</p>
+<p>
+  <label for="in-apellido">y tu apellido</label>
+  <input type="text" id="in-apellido" [(ngModel)]="oUsuario.apellido">
+</p>
+<p>
+    <label for="in-pensamiento">Añade pensamientos</label>
+    <input type="text" id="in-pensamiento" [(ngModel)]="nPensamiento">
+  </p>
+<button (click)="btnAddPensamiento()">Add pensamiento</button> 
+<button (click)="btnBorrar($event)">Borrar</button> 
+<p>
+  Hola {{oUsuario.nombre}} {{oUsuario.apellido}}
+</p>
+<ul>
+  <li *ngFor = "let aficion of aAficiones"> {{aficion}}</li>
+</ul>
+<div *ngIf="vPensamientos.length > 0">
+  <h2>Pensamientos que has tenido</h2>
+  <ul>
+     <li *ngFor = "let pensamiento of vPensamientos"> {{pensamiento}}</li>
+  </ul>
+</div>
