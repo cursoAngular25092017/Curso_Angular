@@ -1,0 +1,19 @@
+<h1>Buscador de paises</h1>
+<!-- #: Angular 2 templating system 
+    which declares dom elements as variables.-->
+    <p>
+        <label for="select">Continente </label>
+        <select id="select" [(ngModel)]="opcionSeleccionada" (ngModelChange)="buscarPais()"> 
+            <option *ngFor="let continente of aContinentes"
+                [ngValue]="continente"> 
+                {{continente}}
+            </option>
+        </select>
+    </p>	    
+
+<input #title type="text">
+<button (click)="search(title.value); title.value=''"> 
+    Buscar
+</button>
+
+<p *ngFor="let pais of aPaises">{{pais}}</p>  
